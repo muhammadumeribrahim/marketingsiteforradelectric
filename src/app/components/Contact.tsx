@@ -17,8 +17,10 @@ export function Contact() {
 
     try {
       const form = e.currentTarget;
+      
+      // ✅ FIXED: Properly encode form data for Netlify
       const formDataToSend = new FormData(form);
-
+      
       const response = await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -34,6 +36,7 @@ export function Contact() {
         setSubmitStatus('error');
       }
     } catch (error) {
+      console.error('Form submission error:', error);
       setSubmitStatus('error');
     }
   };
@@ -97,7 +100,7 @@ export function Contact() {
               name="contact"
               method="POST"
               data-netlify="true"
-              netlify-honeypot="bot-field"
+              data-netlify-honeypot="bot-field"
             >
               {/* Hidden fields for Netlify */}
               <input type="hidden" name="form-name" value="contact" />
