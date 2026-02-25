@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router';
-import { motion } from 'motion/react';
-import { ArrowLeft, Phone, Mail, ChevronDown, ChevronUp } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
+import { ArrowLeft, Phone, Mail, ChevronDown, ChevronUp, CheckCircle, AlertCircle, X } from 'lucide-react';
 import { useState } from 'react';
 import { servicesData } from '../data/servicesData';
 
@@ -16,6 +16,7 @@ export function ServiceDetailPage() {
     zipCode: '',
     message: ''
   });
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   
   const service = servicesData.find(s => s.slug === serviceSlug);
   
@@ -39,11 +40,43 @@ export function ServiceDetailPage() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
-    alert('Thank you! We will contact you soon.');
+    setSubmitStatus('submitting');
+
+    try {
+      const form = e.currentTarget;
+      const formDataToSend = new FormData(form);
+      
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formDataToSend as any).toString(),
+      });
+
+      if (response.ok || response.status === 200) {
+        setSubmitStatus('success');
+        // Clear form fields
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          city: '',
+          zipCode: '',
+          message: ''
+        });
+        // Auto-dismiss after 8 seconds
+        setTimeout(() => setSubmitStatus('idle'), 8000);
+      } else {
+        setSubmitStatus('error');
+        setTimeout(() => setSubmitStatus('idle'), 5000);
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setSubmitStatus('error');
+      setTimeout(() => setSubmitStatus('idle'), 5000);
+    }
   };
 
   const Icon = service.icon;
@@ -190,7 +223,22 @@ export function ServiceDetailPage() {
               <div className="mt-8">
                 <h4 className="text-xl font-bold text-white mb-4">Get a FREE Estimate</h4>
                 
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form 
+                  onSubmit={handleSubmit} 
+                  className="space-y-4"
+                  name="contact"
+                  method="POST"
+                  data-netlify="true"
+                  data-netlify-honeypot="bot-field"
+                >
+                  {/* Hidden fields for Netlify */}
+                  <input type="hidden" name="form-name" value="contact" />
+                  <p className="hidden">
+                    <label>
+                      Don't fill this out if you're human: <input name="bot-field" />
+                    </label>
+                  </p>
+
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <input
@@ -279,9 +327,10 @@ export function ServiceDetailPage() {
 
                   <button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-[#E5C158] to-[#B8941F] hover:from-[#D4AF37] hover:to-[#9A7D1A] text-black font-bold py-4 rounded transition-all shadow-lg hover:shadow-xl"
+                    disabled={submitStatus === 'submitting'}
+                    className="w-full bg-gradient-to-r from-[#E5C158] to-[#B8941F] hover:from-[#D4AF37] hover:to-[#9A7D1A] text-black font-bold py-4 rounded transition-all shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    Submit Your Request
+                    {submitStatus === 'submitting' ? 'Sending...' : 'Submit Your Request'}
                   </button>
                 </form>
               </div>
@@ -356,6 +405,72 @@ export function ServiceDetailPage() {
           </div>
         </div>
       </div>
+
+      {/* Success/Error Popup Modal */}
+      <AnimatePresence>
+        {(submitStatus === 'success' || submitStatus === 'error') && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4"
+            onClick={() => setSubmitStatus('idle')}
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ type: 'spring', duration: 0.5 }}
+              className={`relative max-w-md w-full rounded-2xl p-8 shadow-2xl ${
+                submitStatus === 'success' 
+                  ? 'bg-gradient-to-br from-[#E5C158] to-[#B8941F]' 
+                  : 'bg-gradient-to-br from-red-600 to-red-800'
+              }`}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setSubmitStatus('idle')}
+                className="absolute top-4 right-4 text-black/70 hover:text-black transition-colors"
+              >
+                <X className="w-6 h-6" />
+              </button>
+
+              <div className="text-center">
+                {submitStatus === 'success' ? (
+                  <>
+                    <div className="mx-auto w-16 h-16 bg-black/20 rounded-full flex items-center justify-center mb-4">
+                      <CheckCircle className="w-10 h-10 text-black" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-black mb-3">Thank You!</h3>
+                    <p className="text-black/90 text-lg font-semibold mb-2">
+                      We received your request
+                    </p>
+                    <p className="text-black/80 text-base">
+                      We will reach out within 24 hours
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <div className="mx-auto w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4">
+                      <AlertCircle className="w-10 h-10 text-white" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-white mb-3">Oops!</h3>
+                    <p className="text-white/90 text-lg mb-2">
+                      Something went wrong
+                    </p>
+                    <p className="text-white/80 text-sm">
+                      Please call us at{' '}
+                      <a href="tel:951-953-0658" className="font-bold underline">
+                        (951) 953-0658
+                      </a>
+                    </p>
+                  </>
+                )}
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
