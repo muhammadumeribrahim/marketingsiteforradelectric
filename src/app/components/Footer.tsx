@@ -1,6 +1,7 @@
 import { Phone, Mail, MapPin } from 'lucide-react';
 import { Logo } from './Logo';
 import { images } from '../../assets';
+import { Link } from 'react-router';
 
 export function Footer() {
   return (
@@ -62,20 +63,22 @@ export function Footer() {
           <div>
             <h3 className="font-semibold mb-4 text-[#E5C158] text-sm sm:text-base">Electrical Services</h3>
             <ul className="space-y-2 text-gray-400 text-sm sm:text-base">
-              <li><a href="#services" className="hover:text-[#D4AF37] transition-colors touch-manipulation inline-block py-1">Electrical Repair</a></li>
-              <li><a href="#services" className="hover:text-[#D4AF37] transition-colors touch-manipulation inline-block py-1">Remodeling</a></li>
-              <li><a href="#services" className="hover:text-[#D4AF37] transition-colors touch-manipulation inline-block py-1">EV Chargers</a></li>
-              <li><a href="#services" className="hover:text-[#D4AF37] transition-colors touch-manipulation inline-block py-1">Residential</a></li>
-              <li><a href="#services" className="hover:text-[#D4AF37] transition-colors touch-manipulation inline-block py-1">Commercial</a></li>
+              <li><Link to="/services/electrical-installation-repair" className="hover:text-[#D4AF37] transition-colors touch-manipulation inline-block py-1">Electrical Repair</Link></li>
+              <li><Link to="/services/remodeling-renovations" className="hover:text-[#D4AF37] transition-colors touch-manipulation inline-block py-1">Remodeling</Link></li>
+              <li><Link to="/services/ev-charger-installation" className="hover:text-[#D4AF37] transition-colors touch-manipulation inline-block py-1">EV Chargers</Link></li>
+              <li><Link to="/services/residential-services" className="hover:text-[#D4AF37] transition-colors touch-manipulation inline-block py-1">Residential</Link></li>
+              <li><Link to="/services/commercial-services" className="hover:text-[#D4AF37] transition-colors touch-manipulation inline-block py-1">Commercial</Link></li>
+              <li><Link to="/services/adu-electrical-services" className="hover:text-[#D4AF37] transition-colors touch-manipulation inline-block py-1">ADU Services</Link></li>
+              <li><Link to="/services/insurance-electrical-work" className="hover:text-[#D4AF37] transition-colors touch-manipulation inline-block py-1">Insurance Work</Link></li>
             </ul>
           </div>
 
           <div>
             <h3 className="font-semibold mb-4 text-[#E5C158] text-sm sm:text-base">Low Voltage Services</h3>
             <ul className="space-y-2 text-gray-400 text-sm sm:text-base">
-              <li><a href="#services" className="hover:text-[#D4AF37] transition-colors touch-manipulation inline-block py-1">Security Systems</a></li>
-              <li><a href="#services" className="hover:text-[#D4AF37] transition-colors touch-manipulation inline-block py-1">Network Cabling</a></li>
-              <li><a href="#services" className="hover:text-[#D4AF37] transition-colors touch-manipulation inline-block py-1">Audio/Video</a></li>
+              <li><Link to="/services/security-systems" className="hover:text-[#D4AF37] transition-colors touch-manipulation inline-block py-1">Security Systems</Link></li>
+              <li><Link to="/services/network-data-cabling" className="hover:text-[#D4AF37] transition-colors touch-manipulation inline-block py-1">Network Cabling</Link></li>
+              <li><Link to="/services/audio-video-installation" className="hover:text-[#D4AF37] transition-colors touch-manipulation inline-block py-1">Audio/Video</Link></li>
             </ul>
             <h3 className="font-semibold mb-4 mt-6 text-[#E5C158] text-sm sm:text-base">Company</h3>
             <ul className="space-y-2 text-gray-400 text-sm sm:text-base">
