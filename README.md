@@ -24,7 +24,7 @@ npm run build
 ## Contact Information
 
 - **Phone:** (951) 953-0658
-- **Email:** jon@radelectric.info
+- **Email:** jon@radelectricsolutions.com
 - **TikTok:** @radelectric.info
 
 ## Technology Stack

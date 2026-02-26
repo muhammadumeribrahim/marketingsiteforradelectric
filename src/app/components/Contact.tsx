@@ -72,7 +72,7 @@ export function Contact() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-white mb-1">Email</h4>
-                  <a href="mailto:jon@radelectricsolutions.com" className="text-[#D4AF37] hover:text-[#E5C158] touch-manipulation inline-block py-1 text-sm sm:text-base">jon@radelectric.info</a>
+                  <a href="mailto:jon@radelectricsolutions.com" className="text-[#D4AF37] hover:text-[#E5C158] touch-manipulation inline-block py-1 text-sm sm:text-base">jon@radelectricsolutions.com</a>
                   <p className="text-sm text-gray-400">We'll respond within 24 hours</p>
                 </div>
               </div>

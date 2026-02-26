@@ -40,14 +40,14 @@
 The website uses **Netlify Forms** for form submissions:
 - No server-side code required
 - Automatic spam filtering
-- Email notifications to `jon@radelectric.info`
+- Email notifications to `jon@radelectricsolutions.com`
 - Form submissions accessible via Netlify Dashboard
 
 ### Setup Requirements
 1. Deploy to Netlify
 2. Forms are automatically detected and enabled
 3. Configure email notifications in Netlify Dashboard → Forms
-4. Add notification recipient: `jon@radelectric.info`
+4. Add notification recipient: `jon@radelectricsolutions.com`
 
 ## Development
 

@@ -22,7 +22,7 @@ export function Footer() {
               </a>
               <a href="mailto:jon@radelectricsolutions.com" className="flex items-center gap-2 text-gray-400 hover:text-[#D4AF37] transition-colors touch-manipulation py-1">
                 <Mail className="w-4 h-4" />
-                <span className="text-sm sm:text-base">jon@radelectric.info</span>
+                <span className="text-sm sm:text-base">jon@radelectricsolutions.com</span>
               </a>
             </div>
             
