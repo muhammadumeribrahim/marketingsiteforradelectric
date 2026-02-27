@@ -95,6 +95,98 @@ const galleryPlaceholders = [
     category: 'Electrical Installation & Repair',
     description: '200-amp main service panel upgrade with modern circuit breakers and proper grounding.',
   },
+  {
+    id: 'placeholder-14',
+    image: '/images/gallery/placeholder-14.jpg',
+    title: 'Electrical Rough-In Wiring',
+    category: 'Electrical Installation & Repair',
+    description: 'Pre-drywall wiring prepared for future electrical fixtures.'
+  },
+  {
+    id: 'placeholder-15',
+    image: '/images/gallery/placeholder-15.jpg',
+    title: 'Kitchen Electrical & Fixture Completion',
+    category: 'Remodeling and Renovations',
+    description: 'Kitchen electrical work completed during renovation to support appliances, lighting, and cabinetry.',
+  },
+  {
+    id: 'placeholder-16',
+    image: '/images/gallery/placeholder-16.jpg',
+    title: 'Ceiling Fan Electrical Installation',
+    category: 'Electrical Installation & Repair',
+    description: 'Under-cabinet LED lighting installed to enhance visibility and kitchen workspace functionality.',
+  },
+  {
+    id: 'placeholder-17',
+    image: '/images/gallery/placeholder-17.jpg',
+    title: 'Under-Cabinet LED Lighting',
+    category: 'Electrical Installation and Repair',
+    description: 'Under-cabinet LED lighting installed to enhance visibility and kitchen workspace functionality.',
+  },
+  {
+    id: 'placeholder-18',
+    image: '/images/gallery/placeholder-18.jpg',
+    title: 'Bathroom Vanity Lighting',
+    category: 'Remodeling and Renovations',
+    description: 'Bathroom vanity lighting installed to provide balanced illumination and a modern finished appearance.',
+  },
+  {
+  id: 'placeholder-19',
+  image: '/images/gallery/placeholder-19.jpg',
+  title: 'Wall-Mounted Accent Lighting Installation',
+  category: 'Electrical Installation and Repair',
+  description: 'Multiple wall-mounted accent light fixtures installed to provide balanced illumination and visual symmetry.',
+},
+{
+  id: 'placeholder-20',
+  image: '/images/gallery/placeholder-20.jpg',
+  title: 'High-Ceiling Wall Sconce Installation',
+  category: 'Residential Services',
+  description: 'Wall sconce installed on a high ceiling to enhance ambient lighting and architectural depth.',
+},
+{
+  id: 'placeholder-21',
+  image: '/images/gallery/placeholder-21.jpg',
+  title: 'Interior Wall Sconce Electrical Installation',
+  category: 'Residential Services',
+  description: 'Decorative interior wall sconces installed with concealed wiring to match modern interior finishes.',
+},
+{
+  id: 'placeholder-22',
+  image: '/images/gallery/placeholder-22.jpg',
+  title: 'Electrical Panel Upgrade and Organization',
+  category: 'Electrical Installation and Repair',
+  description: 'Electrical service panel upgraded and clearly labeled to improve safety and system organization.',
+},
+{
+  id: 'placeholder-23',
+  image: '/images/gallery/placeholder-23.jpg',
+  title: 'Electrical Panel Rough-In Installation',
+  category: 'Electrical Installation and Repair',
+  description: 'New electrical panel rough-in installed with structured wiring prepared for future connections.',
+},
+{
+  id: 'placeholder-24',
+  image: '/images/gallery/placeholder-24.jpg',
+  title: 'Electrical Rough-In Wiring and Panel Setup',
+  category: 'Electrical Installation and Repair',
+  description: 'Electrical rough-in wiring completed with organized routing from panel to branch circuits.',
+},
+{
+  id: 'placeholder-25',
+  image: '/images/gallery/placeholder-25.jpg',
+  title: 'Recessed Lighting Installation During Renovation',
+  category: 'Remodeling and Renovations',
+  description: 'Recessed ceiling lighting installed as part of an interior renovation and layout upgrade.',
+},
+{
+  id: 'placeholder-26',
+  image: '/images/gallery/placeholder-26.jpg',
+  title: 'Kitchen Electrical Rough-In and Lighting Preparation',
+  category: 'Remodeling and Renovations',
+  description: 'Kitchen electrical wiring prepared to support cabinetry, appliances, and under-cabinet lighting.',
+},
+  
 ];
 
 export function GalleryPage() {
