@@ -235,7 +235,7 @@ export function GalleryPage() {
         <div className="absolute inset-0 opacity-90">
           <img 
             src="/images/heroes/gallery-hero.jpg"
-            alt="Work Van"
+            alt="Work being done"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70"></div>
