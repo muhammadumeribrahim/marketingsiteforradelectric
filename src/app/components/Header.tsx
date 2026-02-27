@@ -1,5 +1,5 @@
-import { Phone, Mail, Menu, X } from 'lucide-react';
-import { Link, useLocation, useNavigate } from 'react-router';
+import { Phone, Mail, Menu, X, Star, MapPin } from 'lucide-react';
+import { Link, useLocation } from 'react-router';
 import { LogoCompact } from './Logo';
 import { useState } from 'react';
 
@@ -7,48 +7,98 @@ export function Header() {
   const location = useLocation();
   const isHomePage = location.pathname === '/';
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const navigate = useNavigate();
-
-  // Helper function to handle navigation with scroll
-  const handleNavigation = (path: string, hash?: string) => {
-    setMobileMenuOpen(false);
-    
-    if (path === '/' && hash) {
-      // If we're navigating to homepage with a hash
-      if (location.pathname === '/') {
-        // Already on homepage, just scroll
-        const element = document.querySelector(hash);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      } else {
-        // Navigate to homepage, then scroll
-        window.location.href = `/${hash}`;
-      }
-    }
-  };
 
   return (
     <header className="bg-black shadow-lg sticky top-0 z-50 border-b border-gray-900">
-      <div className="bg-[#111111] text-white py-2 border-b border-gray-800">
+      {/* Top Contact Bar */}
+      <div className="bg-[#111111] text-white py-3 border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-0 text-sm">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4 text-sm">
+            {/* Left Side - Contact Info */}
             <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
               <a href="tel:951-953-0658" className="flex items-center gap-2 hover:text-[#D4AF37] transition-colors touch-manipulation py-1">
                 <Phone className="w-4 h-4" />
-                <span className="text-xs sm:text-sm">(951) 953-0658</span>
+                <span className="text-xs sm:text-sm font-medium">(951) 953-0658</span>
               </a>
-              <a href="mailto:jon@radelectricsolutions.com" className="hidden sm:flex items-center gap-2 hover:text-[#D4AF37] transition-colors touch-manipulation py-1">
+              <a href="mailto:jon@radelectricsolutions.com" className="hidden md:flex items-center gap-2 hover:text-[#D4AF37] transition-colors touch-manipulation py-1">
                 <Mail className="w-4 h-4" />
                 <span className="text-xs sm:text-sm">jon@radelectricsolutions.com</span>
               </a>
             </div>
-            <div className="hidden sm:block">
-              <span className="text-[#D4AF37]">★★★★★</span> <span className="text-xs sm:text-sm">5.0 Rating</span>
+
+            {/* Right Side - Rating, Reviews & Social - ALL 47PX */}
+            <div className="flex items-center gap-3 sm:gap-5">
+              {/* 5.0 Rating */}
+              <div className="flex items-center gap-1.5">
+                <div className="flex items-center gap-0.5">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-[#D4AF37] text-[#D4AF37]" />
+                  ))}
+                </div>
+                <span className="text-xs sm:text-sm font-semibold text-[#D4AF37]">5.0</span>
+              </div>
+
+              {/* Google Reviews Link */}
+              <a 
+                href="https://www.google.com/search?q=Rad+Electric+Co" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hidden lg:flex items-center gap-1 text-xs sm:text-sm text-gray-300 hover:text-[#D4AF37] transition-colors touch-manipulation py-1"
+              >
+                <span>See Our Reviews →</span>
+              </a>
+
+              {/* ALL 3 ICONS - SAME SIZE 47PX */}
+              <div className="flex items-center gap-3">
+                {/* Google Maps Pin - 47PX */}
+                <a 
+                  href="https://maps.app.goo.gl/QL3DLrVwavVHWkzj9?g_st=ic" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:scale-110 transition-all touch-manipulation"
+                  aria-label="Find us on Google Maps"
+                >
+                  <div className="w-[47px] h-[47px] rounded-full bg-gradient-to-r from-[#E5C158] to-[#B8941F] flex items-center justify-center">
+                    <MapPin className="w-[24px] h-[24px] text-black" />
+                  </div>
+                </a>
+
+                {/* Instagram - 47PX */}
+                <a 
+                  href="https://www.instagram.com/radelectric.info?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:opacity-80 hover:scale-110 transition-all touch-manipulation"
+                  aria-label="Follow us on Instagram"
+                >
+                  <img 
+                    src="/images/instagram-icon.png" 
+                    alt="Instagram" 
+                    className="w-[47px] h-[47px]" 
+                  />
+                </a>
+
+                {/* TikTok - 47PX */}
+                <a 
+                  href="https://vt.tiktok.com/ZSmPbCFFU/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:opacity-80 hover:scale-110 transition-all touch-manipulation"
+                  aria-label="Follow us on TikTok"
+                >
+                  <img 
+                    src="/images/tiktok-icon.png" 
+                    alt="TikTok" 
+                    className="w-[47px] h-[47px]" 
+                  />
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Main Navigation */}
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
         <div className="flex justify-between items-center">
           <Link to="/" className="touch-manipulation">
@@ -160,6 +210,59 @@ export function Header() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Get a Quote
+              </a>
+
+              {/* Mobile Social Icons - ALL 47PX */}
+              <div className="flex items-center justify-center gap-6 mt-4 pt-4 border-t border-gray-800">
+                <a 
+                  href="https://maps.app.goo.gl/QL3DLrVwavVHWkzj9?g_st=ic" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:scale-110 transition-all touch-manipulation"
+                  aria-label="Find us on Google Maps"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <div className="w-[47px] h-[47px] rounded-full bg-gradient-to-r from-[#E5C158] to-[#B8941F] flex items-center justify-center">
+                    <MapPin className="w-[24px] h-[24px] text-black" />
+                  </div>
+                </a>
+                <a 
+                  href="https://www.instagram.com/radelectric.info?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:opacity-80 hover:scale-110 transition-all"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <img 
+                    src="/images/instagram-icon.png" 
+                    alt="Instagram" 
+                    className="w-[47px] h-[47px]" 
+                  />
+                </a>
+                <a 
+                  href="https://vt.tiktok.com/ZSmPbCFFU/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:opacity-80 hover:scale-110 transition-all"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <img 
+                    src="/images/tiktok-icon.png" 
+                    alt="TikTok" 
+                    className="w-[47px] h-[47px]" 
+                  />
+                </a>
+              </div>
+
+              {/* Mobile Google Reviews Link */}
+              <a 
+                href="https://www.google.com/search?q=Rad+Electric+Co" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-center text-gray-400 hover:text-[#D4AF37] transition-colors py-3 text-sm touch-manipulation"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                ⭐ See Our 5.0 Rating on Google →
               </a>
             </div>
           </div>

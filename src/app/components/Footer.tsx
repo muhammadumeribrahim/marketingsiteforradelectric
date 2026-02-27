@@ -1,6 +1,5 @@
 import { Phone, Mail, MapPin } from 'lucide-react';
 import { Logo } from './Logo';
-import { images } from '../../assets';
 import { Link } from 'react-router';
 
 export function Footer() {
@@ -13,7 +12,7 @@ export function Footer() {
               <Logo size="default" />
             </div>
             <p className="text-gray-400 mb-4 text-sm sm:text-base">
-              Your trusted partner for professional electrical services. Specializing in residential and commercial electrical work, EV charger installations, remodeling, and low voltage solutions.
+              Your trusted partner for professional electrical services in Riverside County and throughout Southern California. Specializing in residential and commercial electrical work, EV charger installations, remodeling, and low voltage solutions.
             </p>
             <div className="flex flex-col gap-2 mb-6">
               <a href="tel:951-953-0658" className="flex items-center gap-2 text-gray-400 hover:text-[#D4AF37] transition-colors touch-manipulation py-1">
@@ -26,7 +25,7 @@ export function Footer() {
               </a>
             </div>
             
-            {/* Social Media Links */}
+            {/* Social Media & Reviews Links - USING DIRECT PATHS */}
             <div className="flex items-center gap-4">
               <a 
                 href="https://www.instagram.com/radelectric.info?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr" 
@@ -35,7 +34,11 @@ export function Footer() {
                 className="hover:opacity-80 transition-opacity touch-manipulation"
                 aria-label="Follow us on Instagram"
               >
-                <img src={images.instagram} alt="Instagram" className="w-9 h-9 sm:w-8 sm:h-8" />
+                <img 
+                  src="/images/instagram-icon.png" 
+                  alt="Instagram" 
+                  className="w-9 h-9 sm:w-8 sm:h-8" 
+                />
               </a>
               <a 
                 href="https://vt.tiktok.com/ZSmPbCFFU/" 
@@ -44,7 +47,21 @@ export function Footer() {
                 className="hover:opacity-80 transition-opacity touch-manipulation"
                 aria-label="Follow us on TikTok"
               >
-                <img src={images.tiktok} alt="TikTok" className="w-9 h-9 sm:w-8 sm:h-8" />
+                <img 
+                  src="/images/tiktok-icon.png" 
+                  alt="TikTok" 
+                  className="w-9 h-9 sm:w-8 sm:h-8" 
+                />
+              </a>
+              <a 
+                href="https://www.google.com/search?q=Rad+Electric+Co" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 text-gray-400 hover:text-[#D4AF37] transition-colors text-xs touch-manipulation"
+                aria-label="See our Google reviews"
+              >
+                <span className="text-[#D4AF37]">★★★★★</span>
+                <span className="hidden sm:inline">5.0 Reviews</span>
               </a>
               <a 
                 href="https://maps.app.goo.gl/QL3DLrVwavVHWkzj9?g_st=ic" 
@@ -87,6 +104,68 @@ export function Footer() {
               <li><a href="#contact" className="hover:text-[#D4AF37] transition-colors touch-manipulation inline-block py-1">Get a Quote</a></li>
             </ul>
           </div>
+        </div>
+
+        {/* Service Areas Section - SEO BOOST */}
+        <div className="border-t border-gray-800 pt-8 pb-6">
+          <h3 className="font-semibold mb-4 text-[#E5C158] text-center text-base sm:text-lg">Service Areas</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-sm">
+            {/* Riverside County */}
+            <div>
+              <h4 className="font-semibold text-white mb-2">Riverside County</h4>
+              <ul className="space-y-1 text-gray-400">
+                <li className="hover:text-[#D4AF37] transition-colors">Riverside</li>
+                <li className="hover:text-[#D4AF37] transition-colors">Menifee</li>
+                <li className="hover:text-[#D4AF37] transition-colors">Temecula</li>
+                <li className="hover:text-[#D4AF37] transition-colors">Murrieta</li>
+                <li className="hover:text-[#D4AF37] transition-colors">Moreno Valley</li>
+                <li className="hover:text-[#D4AF37] transition-colors">Perris</li>
+                <li className="hover:text-[#D4AF37] transition-colors">Corona</li>
+              </ul>
+            </div>
+
+            {/* Orange County */}
+            <div>
+              <h4 className="font-semibold text-white mb-2">Orange County</h4>
+              <ul className="space-y-1 text-gray-400">
+                <li className="hover:text-[#D4AF37] transition-colors">Anaheim</li>
+                <li className="hover:text-[#D4AF37] transition-colors">Irvine</li>
+                <li className="hover:text-[#D4AF37] transition-colors">Santa Ana</li>
+                <li className="hover:text-[#D4AF37] transition-colors">Huntington Beach</li>
+                <li className="hover:text-[#D4AF37] transition-colors">Orange</li>
+                <li className="hover:text-[#D4AF37] transition-colors">Fullerton</li>
+              </ul>
+            </div>
+
+            {/* Los Angeles County */}
+            <div>
+              <h4 className="font-semibold text-white mb-2">Los Angeles County</h4>
+              <ul className="space-y-1 text-gray-400">
+                <li className="hover:text-[#D4AF37] transition-colors">Los Angeles</li>
+                <li className="hover:text-[#D4AF37] transition-colors">Long Beach</li>
+                <li className="hover:text-[#D4AF37] transition-colors">Pasadena</li>
+                <li className="hover:text-[#D4AF37] transition-colors">Pomona</li>
+                <li className="hover:text-[#D4AF37] transition-colors">Torrance</li>
+                <li className="hover:text-[#D4AF37] transition-colors">Glendale</li>
+              </ul>
+            </div>
+
+            {/* San Bernardino County */}
+            <div>
+              <h4 className="font-semibold text-white mb-2">San Bernardino County</h4>
+              <ul className="space-y-1 text-gray-400">
+                <li className="hover:text-[#D4AF37] transition-colors">San Bernardino</li>
+                <li className="hover:text-[#D4AF37] transition-colors">Fontana</li>
+                <li className="hover:text-[#D4AF37] transition-colors">Rancho Cucamonga</li>
+                <li className="hover:text-[#D4AF37] transition-colors">Ontario</li>
+                <li className="hover:text-[#D4AF37] transition-colors">Chino</li>
+                <li className="hover:text-[#D4AF37] transition-colors">Upland</li>
+              </ul>
+            </div>
+          </div>
+          <p className="text-center text-gray-500 text-xs mt-4">
+            Licensed electrician serving Riverside County, Orange County, Los Angeles County, and San Bernardino County
+          </p>
         </div>
 
         <div className="border-t border-gray-900 pt-6 sm:pt-8">

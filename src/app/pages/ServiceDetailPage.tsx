@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router';
 import { motion, AnimatePresence } from 'motion/react';
-import { ArrowLeft, Phone, Mail, ChevronDown, ChevronUp, CheckCircle, AlertCircle, X } from 'lucide-react';
+import { ArrowLeft, Phone, Mail, ChevronDown, ChevronUp, CheckCircle, AlertCircle, X, MapPin } from 'lucide-react';
 import { useState } from 'react';
 import { servicesData } from '../data/servicesData';
 
@@ -371,7 +371,7 @@ export function ServiceDetailPage() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
               <h3 className="font-bold text-white mb-3">Primary Service Area</h3>
               <ul className="space-y-2 text-gray-300">
@@ -403,6 +403,20 @@ export function ServiceDetailPage() {
                 <li>• And surrounding areas</li>
               </ul>
             </div>
+          </div>
+
+          {/* Extended Service Counties */}
+          <div className="text-center pt-8 border-t border-gray-800">
+            <div className="inline-flex items-center gap-2 text-gray-400 mb-3">
+              <MapPin className="w-5 h-5 text-[#D4AF37]" />
+              <span className="font-semibold">Extended Service Areas</span>
+            </div>
+            <p className="text-gray-300 text-lg">
+              Also serving <span className="text-[#D4AF37] font-semibold">Orange County</span>, <span className="text-[#D4AF37] font-semibold">Los Angeles County</span>, and <span className="text-[#D4AF37] font-semibold">San Bernardino County</span>
+            </p>
+            <p className="text-gray-400 text-sm mt-2">
+              Call us to confirm service availability in your area
+            </p>
           </div>
         </div>
       </div>

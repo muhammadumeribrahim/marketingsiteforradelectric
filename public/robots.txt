@@ -1,0 +1,22 @@
+# robots.txt for Rad Electric Co
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://radelectricsolutions.com/sitemap.xml
+
+# Crawl-delay (optional, helps prevent server overload)
+Crawl-delay: 1
+
+# Disallow admin or private areas (if any in the future)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Allow access to important pages
+Allow: /services/
+Allow: /gallery
+Allow: /#services
+Allow: /#contact
+Allow: /#about

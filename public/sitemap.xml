@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://radelectricsolutions.com/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Gallery Page -->
+  <url>
+    <loc>https://radelectricsolutions.com/gallery</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Service: Electrical Installation & Repair -->
+  <url>
+    <loc>https://radelectricsolutions.com/services/electrical-installation-repair</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Service: Remodeling & Renovations -->
+  <url>
+    <loc>https://radelectricsolutions.com/services/remodeling-renovations</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Service: EV Charger Installation -->
+  <url>
+    <loc>https://radelectricsolutions.com/services/ev-charger-installation</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Service: Residential Services -->
+  <url>
+    <loc>https://radelectricsolutions.com/services/residential-services</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Service: Commercial Services -->
+  <url>
+    <loc>https://radelectricsolutions.com/services/commercial-services</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Service: ADU Electrical Services -->
+  <url>
+    <loc>https://radelectricsolutions.com/services/adu-electrical-services</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Service: Insurance Electrical Work -->
+  <url>
+    <loc>https://radelectricsolutions.com/services/insurance-electrical-work</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Service: Security Systems -->
+  <url>
+    <loc>https://radelectricsolutions.com/services/security-systems</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Service: Network & Data Cabling -->
+  <url>
+    <loc>https://radelectricsolutions.com/services/network-data-cabling</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Service: Audio/Video Installation -->
+  <url>
+    <loc>https://radelectricsolutions.com/services/audio-video-installation</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>
