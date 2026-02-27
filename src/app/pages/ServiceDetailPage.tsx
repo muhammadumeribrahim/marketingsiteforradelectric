@@ -376,9 +376,10 @@ export function ServiceDetailPage() {
               <h3 className="font-bold text-white mb-3">Primary Service Area</h3>
               <ul className="space-y-2 text-gray-300">
                 <li>• Riverside</li>
-                <li>• Corona</li>
+                <li>• Menifee</li>
                 <li>• Moreno Valley</li>
                 <li>• Temecula</li>
+                <li>• Corning</li>
                 <li>• Murrieta</li>
               </ul>
             </div>
@@ -387,9 +388,9 @@ export function ServiceDetailPage() {
               <ul className="space-y-2 text-gray-300">
                 <li>• Perris</li>
                 <li>• Lake Elsinore</li>
-                <li>• Menifee</li>
                 <li>• Hemet</li>
                 <li>• San Jacinto</li>
+                <li>• Corona</li>
               </ul>
             </div>
             <div>
